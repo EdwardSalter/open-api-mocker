@@ -11,9 +11,7 @@ const OpenApiMocker = require('../lib/open-api-mocker');
 const Server = require('../lib/mocker/express/server.js');
 
 describe('Openapi', () => {
-
 	describe('Mocker', () => {
-
 		beforeEach(() => {
 			sandbox.spy(Server.prototype, 'setServers');
 			sandbox.spy(Server.prototype, 'setPort');
@@ -26,7 +24,6 @@ describe('Openapi', () => {
 		});
 
 		it('Should set the parameters to the server', async () => {
-
 			const openApiMocker = new OpenApiMocker({});
 			openApiMocker.setSchema(schema);
 
@@ -38,7 +35,5 @@ describe('Openapi', () => {
 			sandbox.assert.calledOnce(Server.prototype.setPaths);
 			sandbox.assert.calledOnce(Server.prototype.init);
 		});
-
 	});
-
 });
